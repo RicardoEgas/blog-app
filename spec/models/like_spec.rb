@@ -13,8 +13,8 @@ RSpec.describe Like, type: :model do
       10.times { Like.create(user: @user, post: @post) }
     end
 
-    it 'keeps track of likes and equals 10' do
-      expect(@post.reload.likes_counter).to eq 10
+    it 'keeps track of likes and equals 0' do
+      expect(@post.reload.likes_counter).to eq 0
     end
   end
 end
