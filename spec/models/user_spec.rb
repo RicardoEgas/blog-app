@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
   describe '#recent_posts' do
     it 'returns the 2 most recent posts' do
       user = User.create(name: 'Example User', photo: 'example.jpg', bio: 'Example bio')
-      post1 = Post.create(author: user, title: 'Post 1', text: 'hello world')
+      Post.create(author: user, title: 'Post 1', text: 'hello world')
       post2 = Post.create(author: user, title: 'Post 2', text: 'hello world')
       post3 = Post.create(author: user, title: 'Post 3', text: 'hello world')
 
