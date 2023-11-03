@@ -9,7 +9,6 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-# rubocop:disable Metrics/BlockLength
 
 ActiveRecord::Schema[7.1].define(version: 20_231_101_232_558) do
   # These are extensions that must be enabled in order to support this database
@@ -60,5 +59,3 @@ ActiveRecord::Schema[7.1].define(version: 20_231_101_232_558) do
   add_foreign_key 'likes', 'users'
   add_foreign_key 'posts', 'users', column: 'author_id'
 end
-
-# rubocop:enable Metrics/BlockLength
