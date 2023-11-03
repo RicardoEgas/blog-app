@@ -9,12 +9,16 @@ RSpec.describe Like, type: :model do
                           likes_counter: 0)
     end
 
-    before do
+    after :all do
+      puts "After all hook is running!"
       10.times { Like.create(user: @user, post: @post) }
     end
 
     it 'keeps track of likes and equals 10' do
-      expect(@post.reload.likes_counter).to eq 10
+      ActiveRecord::Base.transaction do
+        @post.reload
+        expect(@post.likes_counter).to eq 10
+      end
     end
   end
 end
