@@ -18,16 +18,14 @@ RSpec.describe User, type: :model do
       post1 = Post.create(author: user, title: 'Post 1', text: 'hello world')
       post2 = Post.create(author: user, title: 'Post 2', text: 'hello world')
       post3 = Post.create(author: user, title: 'Post 3', text: 'hello world')
-  
+
       rec_posts = user.recent_posts
       rec_posts_array = rec_posts.to_a
-  
+
       expected_posts = [post3, post2].sort_by(&:created_at)
       actual_posts = rec_posts_array.sort_by(&:created_at)
-  
+
       expect(actual_posts).to eq(expected_posts)
     end
   end
-  
-  
 end
