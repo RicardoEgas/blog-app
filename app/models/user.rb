@@ -9,4 +9,12 @@ class User < ApplicationRecord
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end
+
+  before_validation :set_default_post_counter
+
+  private
+
+  def set_default_post_counter
+    self.post_counter ||= 0
+  end
 end
