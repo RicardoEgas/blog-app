@@ -14,7 +14,7 @@
   <%= form.submit "Like" %>
 <% end %>
 
-  <h2>Add a Comment</h2>
+  <h2 class='add-comment'>Add a Comment</h2>
   <%= render partial: 'comments/form', locals: { post: @post, comment: Comment.new } %>
 
   <div class="comment-container">

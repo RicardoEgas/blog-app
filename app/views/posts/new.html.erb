@@ -1,3 +1,4 @@
+<div class='new-post-section'>
 <h1>Create a New Post</h1>
 
 <%= form_with(model: @post, url: user_posts_path(@user), method: :post) do |form| %>
@@ -16,3 +17,4 @@
     <%= form.submit "Create Post" %>
   </div>
 <% end %>
+</div>
