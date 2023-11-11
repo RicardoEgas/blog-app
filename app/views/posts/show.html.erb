@@ -1,20 +1,26 @@
 <div class="post-container">
-    <div class="post-header">
-            <h2><%= @post.title%> By <%= @post.author.name%></h2>
-            <ul>
-                <li>Comments: <%= @post.comment_counter%> </li>
-                <li>Likes: <%= @post.like_counter%> </li>
-            </ul>
-    </div>
+  <div class="post-header">
+    <h2><%= @post.title %> By <%= @post.author.name %></h2>
+    <ul>
+      <li>Comments: <%= @post.comment_counter %></li>
+      <li>Likes: <%= @post.like_counter %></li>
+    </ul>
+  </div>
+  <h4 class="comment-title">Comments</h4>
+  <div class="post-body">
+    <%= @post.text %>
+  </div>
+<%= form_with(model: [@user, @post, @post.likes.build], url: user_post_likes_path(@user, @post), method: :post) do |form| %>
+  <%= form.submit "Like" %>
+<% end %>
 
-    <h4 class="comment-title">Comments</h4>
-    <div class="post-body">
-        <%=@post.text%>
-    </div>
+  <h2 class='add-comment'>Add a Comment</h2>
+  <%= render partial: 'comments/form', locals: { post: @post, comment: Comment.new } %>
 
-    <div class="comment-container">
-        <% @post.comments.each do |comment| %>
-            <span><%= comment.author.name%> : <%= comment.text%></span>
-        <% end %>
-    </div>
+  <div class="comment-container">
+    <% @post.comments.each do |comment| %>
+      <span><%= comment.author.name %> : <%= comment.text %></span>
+    <% end %>
+  </div>
 </div>
+
