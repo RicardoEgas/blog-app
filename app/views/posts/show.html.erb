@@ -10,6 +10,9 @@
   <div class="post-body">
     <%= @post.text %>
   </div>
+<%= form_with(model: [@user, @post, @post.likes.build], url: user_post_likes_path(@user, @post), method: :post) do |form| %>
+  <%= form.submit "Like" %>
+<% end %>
 
   <h2>Add a Comment</h2>
   <%= render partial: 'comments/form', locals: { post: @post, comment: Comment.new } %>
