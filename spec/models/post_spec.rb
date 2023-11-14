@@ -57,7 +57,7 @@ RSpec.describe Post, type: :model do
   describe '#update_post_counter' do
     it 'updates the author\'s post_counter after save' do
       user = User.create(name: 'John Doe', post_counter: 0)
-      post = user.posts.create(title: 'New Post')
+      post = user.posts.build(title: 'New Post')
 
       expect { post.save }.to change { user.reload.post_counter }.by(1)
     end
