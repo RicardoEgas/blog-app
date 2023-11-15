@@ -42,6 +42,7 @@ RSpec.describe 'User show', type: :feature do
   it "When I click a user's post, it redirects me to that post's show page." do
     click_on 'Hello'
     expect(page).to have_content 'first post'
+    expect(current_path).to eq(user_post_path(@user, @post1))
   end
 
   it " When I click to see all posts, it redirects me to the user's post's index page. " do
