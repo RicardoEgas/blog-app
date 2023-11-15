@@ -1,4 +1,5 @@
 <h1 class="user-title"> Select User</h1>
+<%= link_to "Log Out", sign_out_user_path, class: "logout-button" %>
 <div class="user-container">
     <ul>
         <%= render partial: 'user', collection: @users%>
