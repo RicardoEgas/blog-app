@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'Post index ' do
   before :each do
-    @user = User.create(name: 'Ricardo', photo: 'https://media.licdn.com/dms/image/D4D03AQEeEhQc0QaOpQ/profile-displayphoto-shrink_100_100/0/1699713520680?e=1705536000&v=beta&t=2x1NNju9e9vaRV-HVhDuNpfZGQjbTMNzNNv7l4LiOQM', bio: 'web developer',
+    @user = User.create(name: 'Ricardo', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                         post_counter: 0)
     @post1 = Post.create(author_id: @user.id, title: 'Hello', text: 'first post', like_counter: 0,
                          comment_counter: 0)
@@ -13,7 +13,7 @@ RSpec.describe 'Post index ' do
     visit user_posts_path(@user.id, page: 2)
   end
   it 'see the user profile picture' do
-    expect(page).to have_css("img[src*='https://media.licdn.com/dms/image/D4D03AQEeEhQc0QaOpQ/profile-displayphoto-shrink_100_100/0/1699713520680?e=1705536000&v=beta&t=2x1NNju9e9vaRV-HVhDuNpfZGQjbTMNzNNv7l4LiOQM']")
+    expect(page).to have_css("img[src*='https://unsplash.com/photos/F_-0BxGuVvo']")
   end
   it ' can see the user name' do
     expect(page).to have_content('Ricardo')

@@ -143,6 +143,12 @@ it will run the the server on ```localhost:3000```
 - Twitter: [@twitterhandle](https://twitter.com/RjEgas)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ricardo-egas-952125136)
 
+👤 **Amin Alizadeh**
+
+- GitHub: [@M-AminAlizadeh](https://github.com/M-AminAlizadeh)
+- Twitter: [@Mamin_alizadeh](https://twitter.com/Mamin_alizadeh)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/m-amin-alizadeh/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -11,7 +11,7 @@ RSpec.describe 'Post show' do
                          comment_counter: 0)
     @comment1 = Comment.create(user_id: @user.id, post_id: @post1.id, text: 'first comment')
     @comment2 = Comment.create(user_id: @user.id, post_id: @post1.id, text: 'second comment')
-    
+
     visit user_post_path(@user.id, @post1.id)
   end
   it 'see the post title' do
@@ -24,8 +24,8 @@ RSpec.describe 'Post show' do
     expect(page).to have_content('Comments: 2')
   end
   it 'see how many likes it has' do
-      expect(page).to have_content('Likes: 0')
-  end  
+    expect(page).to have_content('Likes: 0')
+  end
   it 'see the post body' do
     expect(page).to have_content('first post')
   end

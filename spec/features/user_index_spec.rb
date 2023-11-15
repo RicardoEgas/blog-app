@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'User index', type: :feature do
   before :each do
-    @user = User.create(name: 'Patrick', photo: 'https://conteudo.imguol.com.br/c/entretenimento/e7/2020/08/10/patrick-estrela-bob-esponja-1597090013311_v2_1000x667.jpg', bio: 'web developer',
+    @user = User.create(name: 'Patrick', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'web developer',
                         post_counter: 0)
-                        visit '/users'
+    visit '/users'
   end
 
   it 'shows the correct content' do
@@ -21,6 +21,6 @@ RSpec.describe 'User index', type: :feature do
   end
 
   it 'should return the correct css ' do
-    expect(page).to have_css("img[src*='https://conteudo.imguol.com.br/c/entretenimento/e7/2020/08/10/patrick-estrela-bob-esponja-1597090013311_v2_1000x667.jpg']")
+    expect(page).to have_css("img[src*='https://unsplash.com/photos/F_-0BxGuVvo']")
   end
 end
