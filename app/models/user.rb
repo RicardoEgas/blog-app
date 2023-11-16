@@ -21,4 +21,8 @@ class User < ApplicationRecord
   def set_default_post_counter
     self.post_counter ||= 0
   end
+
+  def admin?
+    role == 'admin'
+  end
 end

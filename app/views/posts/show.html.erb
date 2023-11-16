@@ -9,6 +9,11 @@
   <h4 class="comment-title">Comments</h4>
   <div class="post-body">
     <%= @post.text %>
+        <% if can? :destroy, @post %>
+            <%= button_to 'Delete', user_post_path(user_id: @post.author_id, id: @post.id),
+                            method: :delete, data: { confirm: 'Are you sure you want to delete this post?' },
+                            class: 'border' %>
+        <% end %>
   </div>
 <%= form_with(model: [@user, @post, @post.likes.build], url: user_post_likes_path(@user, @post), method: :post) do |form| %>
   <%= form.submit "Like" %>
@@ -20,6 +25,9 @@
   <div class="comment-container">
     <% @post.comments.each do |comment| %>
       <span><%= comment.author.name %> : <%= comment.text %></span>
+              <% if can? :destroy, comment %>
+          <%= button_to 'Delete', user_post_comment_path(user_id: @user.id, post_id: @post.id, id: comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
     <% end %>
   </div>
 </div>
