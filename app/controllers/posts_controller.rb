@@ -26,16 +26,20 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
-    @post = Post.includes(:likes).find(params[:id])
-    @author = @post.author
-    @author.decrement!(:post_counter)
-    @post.likes.destroy_all
-    @post.destroy!
+# app/controllers/posts_controller.rb
 
-    redirect_to user_posts_path(id: @author.id), notice: 'Post successfully deleted'
-  end
+# app/controllers/posts_controller.rb
 
+def destroy
+  @post = Post.includes(:likes).find(params[:id])
+  Comment.where(post_id: @post.id).destroy_all
+  @author = @post.author
+  @author.decrement!(:post_counter)
+  @post.likes.destroy_all
+  @post.destroy
+
+  redirect_to user_posts_path(id: @author.id), notice: 'Post successfully deleted'
+end
 
   private
 
