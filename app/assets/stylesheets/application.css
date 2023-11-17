@@ -175,8 +175,8 @@
   display: inline-block;
   width: 90%;
   padding: 5px;
-  background-color: #0766AD; 
-  color: #ffffff;
+  background-color: #0766ad;
+  color: #fff;
   text-decoration: none;
   border-radius: 5px;
   box-shadow: 10px 10px;
@@ -185,13 +185,13 @@
 .logout-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #0766AD; 
-  color: #ffffff;
+  background-color: #0766ad;
+  color: #fff;
   text-decoration: none;
   border-radius: 5px;
 }
 
-.signup-form{
+.signup-form {
   margin: 0 auto;
 }
 
@@ -208,8 +208,17 @@
 
 .signup-button {
   padding: 10px 20px;
-  background-color: #0766AD; 
-  color: #ffffff;
+  background-color: #0766ad;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.delete-button {
+  display: inline-block;
+  padding: 2px 4px;
+  background-color: #d80032;
+  color: #fff;
   text-decoration: none;
   border-radius: 5px;
 }

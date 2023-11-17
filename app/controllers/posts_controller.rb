@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments).paginate(page: params[:page], per_page: 2)
@@ -23,6 +24,21 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  # app/controllers/posts_controller.rb
+
+  # app/controllers/posts_controller.rb
+
+  def destroy
+    @post = Post.includes(:likes).find(params[:id])
+    Comment.where(post_id: @post.id).destroy_all
+    @author = @post.author
+    @author.decrement!(:post_counter)
+    @post.likes.destroy_all
+    @post.destroy
+
+    redirect_to user_posts_path(id: @author.id), notice: 'Post successfully deleted'
   end
 
   private
