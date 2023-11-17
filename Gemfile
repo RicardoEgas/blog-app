@@ -74,3 +74,4 @@ gem 'will_paginate'
 
 gem 'cancancan', '~> 3.0'
 gem 'devise', '~> 4.9'
+gem 'grape'
