@@ -6,6 +6,7 @@ AllCops:
     - "node_modules/**/*"
     - "bin/*" 
     - "db/*"
+    - "app/api/v1/base.rb"
 
   DisplayCopNames: true
 
